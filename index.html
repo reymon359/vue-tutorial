@@ -62,8 +62,8 @@
 <body>
 
     <div id="app">
+        <small>You can edit this👇</small>
         <input type="text" v-model="message2"></input>
-        <small>You can edit this</small>
         <p v-html="
 					message1.slice(0, 7) +
 					message2 +
@@ -84,7 +84,7 @@
             el: "#app",
             data: {
                 message1: "Hello, World! " + emojify(),
-                message2: "Your name"
+                message2: "your name"
             }
         })
     </script>
