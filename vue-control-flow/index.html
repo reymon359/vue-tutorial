@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
-    <link rel="stylesheet" href="css/debug.css">
+    <link rel="stylesheet" href="../assets/css/debug.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <style>
@@ -21,15 +21,15 @@
             width: 100vw;
             height: 100vh;
             font-weight: 900;
-            font-size: 7rem;
+            font-size: 3rem;
             color: hsl(0, 0%, 100%);
             background: linear-gradient(135deg, rgb(80, 206, 110) 0%, rgb(80, 206, 110) 44%, rgb(45, 196, 106) 44%, rgb(45, 196, 106) 66%, rgb(10, 185, 102) 66%, rgb(10, 185, 102) 73%, rgb(151, 227, 119) 73%, rgb(151, 227, 119) 75%, rgb(116, 217, 115) 75%, rgb(116, 217, 115) 93%, rgb(186, 238, 123) 93%, rgb(186, 238, 123) 100%);
             user-select: none;
         }
         
         img {
-            width: 8rem;
-            height: 8rem;
+            width: 4rem;
+            height: 4rem;
             vertical-align: calc(-0.12109375em);
         }
         
@@ -43,7 +43,7 @@
 <body>
 
     <div id="app">
-        <p>Vue Control Flow <small>with wizards</small> </p>
+        <p>Vue Control Flow </p>
         <p v-for="wizard in wizards()" v-html="wizard.name + ' ' + wizard.pet"></p>
 
 
@@ -54,7 +54,7 @@
 
         // emojify returns the corresponding emoji image
         function emojify(name) {
-            var out = `<img src="emojis/` + name + `.png">`
+            var out = `<img src="../assets/emojis/` + name + `.png">`
             return out
         }
 
