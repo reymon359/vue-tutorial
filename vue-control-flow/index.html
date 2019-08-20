@@ -32,13 +32,18 @@
             height: 8rem;
             vertical-align: calc(-0.12109375em);
         }
+        
+        small {
+            font-size: 2rem;
+            font-weight: 100;
+        }
     </style>
 </head>
 
 <body>
 
     <div id="app">
-        <p>Vue Control Flow</p>
+        <p>Vue Control Flow <small>with wizards</small> </p>
         <p v-for="wizard in wizards()" v-html="wizard.name + ' ' + wizard.pet"></p>
 
 
