@@ -21,9 +21,9 @@
             width: 100vw;
             height: 100vh;
             font-weight: 900;
-            font-size: 8rem;
+            font-size: 7rem;
             color: hsl(0, 0%, 100%);
-            background: hsl(240, 100%, 67%);
+            background: linear-gradient(135deg, rgb(101, 214, 140) 0%, rgb(101, 214, 140) 21%, rgb(40, 138, 77) 21%, rgb(40, 138, 77) 27%, rgb(38, 131, 73) 27%, rgb(38, 131, 73) 37%, rgb(37, 111, 64) 37%, rgb(37, 111, 64) 61%, rgb(49, 160, 86) 61%, rgb(49, 160, 86) 99%, rgb(88, 158, 109) 99%, rgb(88, 158, 109) 100%);
             user-select: none;
         }
         
@@ -38,6 +38,7 @@
 <body>
 
     <div id="app">
+        <p>Vue components</p>
         <wizard :name="harry" :cast="oculus_reparo"></wizard>
         <wizard :name="ron" :cast="wingardium_leviosa"></wizard>
         <wizard :name="hermione" :cast="alohomora"></wizard>
