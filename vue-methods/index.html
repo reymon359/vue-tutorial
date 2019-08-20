@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
-    <link rel="stylesheet" href="css/debug.css">
+    <link rel="stylesheet" href="../assets/css/debug.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <style>
@@ -21,15 +21,15 @@
             width: 100vw;
             height: 100vh;
             font-weight: 900;
-            font-size: 7rem;
+            font-size: 3rem;
             color: hsl(0, 0%, 100%);
             background: linear-gradient(135deg, rgb(22, 114, 105) 0%, rgb(22, 114, 105) 50%, rgb(89, 171, 135) 50%, rgb(89, 171, 135) 57%, rgb(67, 152, 125) 57%, rgb(67, 152, 125) 74%, rgb(44, 133, 115) 74%, rgb(44, 133, 115) 76%, rgb(134, 209, 155) 76%, rgb(134, 209, 155) 84%, rgb(156, 228, 165) 84%, rgb(156, 228, 165) 91%, rgb(111, 190, 145) 91%, rgb(111, 190, 145) 100%);
             user-select: none;
         }
         
         img {
-            width: 8rem;
-            height: 8rem;
+            width: 4rem;
+            height: 4rem;
             vertical-align: calc(-0.12109375em);
         }
     </style>
@@ -40,6 +40,46 @@
     <div id="app">
         <p>Vue methods</p>
         <p v-html="incendio(lumos(wizard))"></p>
+        <textarea disabled>
+
+			
+	<div id="app">
+		<p>Vue methods</p>
+		<p v-html="incendio(lumos(wizard))"></p>
+	</div>	
+
+	<script>
+			"use strict"
+	
+			// emojify returns the corresponding emoji image
+			function emojify(name) {
+				var out = `<img src="../assets/emojis/` + name + `.png">`
+				return out
+			}
+	
+			// cast returns a spell (function) that decorates the wizard
+			function cast(emoji) {
+				if (!emoji) {
+					emoji = "¯\\_(ツ)_/¯"
+				}
+				return function(wizard) {
+					return emoji + wizard + emoji
+				}
+			}
+	
+			var app = new Vue({
+				el: "#app",
+				data: {
+					wizard: emojify("wizard")
+				},
+				methods: {
+					lumos: cast(emojify("lumos")),
+					incendio: cast(emojify("incendio"))
+				}
+			})
+		</script>
+
+		</textarea>
     </div>
 
     <script>
@@ -47,7 +87,7 @@
 
         // emojify returns the corresponding emoji image
         function emojify(name) {
-            var out = `<img src="emojis/` + name + `.png">`
+            var out = `<img src="../assets/emojis/` + name + `.png">`
             return out
         }
 

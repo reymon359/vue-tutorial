@@ -85,28 +85,29 @@
             "></p>
         <small>made with Vue.js💚</small>
         <textarea disabled> 
-                <p v-html="
-                message1.slice(0, 7) +
-                message2 +
-                message1.slice(12)
-        "></p>
-        <script>
-                "use strict"
-        
-                // emojify returns the corresponding emoji image
-                function emojify() {
-                    var out = `🎉`
-                    return out
+    
+    <p v-html="
+        message1.slice(0, 7) +
+        message2 +
+        message1.slice(12)
+    "></p>
+    <script>
+            "use strict"
+    
+            // emojify returns the corresponding emoji image
+            function emojify() {
+                var out = `🎉`
+                return out
+            }
+    
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    message1: "Hello, World! " + emojify(),
+                    message2: "your name"
                 }
-        
-                var app = new Vue({
-                    el: "#app",
-                    data: {
-                        message1: "Hello, World! " + emojify(),
-                        message2: "your name"
-                    }
-                })
-            </script>
+            })
+        </script>
         
         </textarea>
     </div>
