@@ -15,6 +15,7 @@
         
         #app {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width: 100vw;
@@ -22,7 +23,7 @@
             font-weight: 900;
             font-size: 8rem;
             color: hsl(0, 0%, 100%);
-            background: hsl(240, 100%, 67%);
+            background: linear-gradient(135deg, rgb(22, 114, 105) 0%, rgb(22, 114, 105) 50%, rgb(89, 171, 135) 50%, rgb(89, 171, 135) 57%, rgb(67, 152, 125) 57%, rgb(67, 152, 125) 74%, rgb(44, 133, 115) 74%, rgb(44, 133, 115) 76%, rgb(134, 209, 155) 76%, rgb(134, 209, 155) 84%, rgb(156, 228, 165) 84%, rgb(156, 228, 165) 91%, rgb(111, 190, 145) 91%, rgb(111, 190, 145) 100%);
             user-select: none;
         }
         
@@ -37,6 +38,7 @@
 <body>
 
     <div id="app">
+        <p>Vue methods</p>
         <p v-html="incendio(lumos(wizard))"></p>
     </div>
 
