@@ -66,7 +66,7 @@
 
         Vue.component("wizard", {
             props: ["name", "cast"],
-            template: `<p v-html="cast(name)"></p>`
+            template: `<p v-html="cast(name)"><slot></slot></p>`
         })
 
         var app = new Vue({
