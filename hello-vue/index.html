@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
-    <link rel="stylesheet" href="css/debug.css">
+    <link rel="stylesheet" href="../assets/css/debug.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <style>
@@ -37,7 +37,7 @@
             width: 100vw;
             height: 100vh;
             font-weight: 900;
-            font-size: 7rem;
+            font-size: 4rem;
             color: hsl(0, 0%, 100%);
             background: linear-gradient(135deg, rgb(26, 118, 30) 0%, rgb(26, 118, 30) 23%, rgb(72, 215, 80) 23%, rgb(72, 215, 80) 28%, rgb(34, 176, 39) 28%, rgb(34, 176, 39) 35%, rgb(42, 126, 41) 35%, rgb(42, 126, 41) 100%);
         }
@@ -59,15 +59,16 @@
         
         textarea {
             background-color: darkcyan;
-            background: linear-gradient(0deg, rgb(113, 136, 223), rgb(17, 213, 207));
+            background: linear-gradient(45deg, rgb(18, 88, 19), rgb(40, 226, 59));
             box-shadow: -13px 20px 25px -6px rgba(0, 0, 0, .1);
             color: #fff;
             max-width: 100%;
             border-radius: 10px;
             border: none;
-            width: 50%;
-            height: 50%;
+            width: 80%;
+            height: 60%;
             max-width: 800px;
+            margin: 30px auto;
         }
     </style>
 </head>
@@ -84,7 +85,29 @@
             "></p>
         <small>made with Vue.js💚</small>
         <textarea disabled> 
-            
+                <p v-html="
+                message1.slice(0, 7) +
+                message2 +
+                message1.slice(12)
+        "></p>
+        <script>
+                "use strict"
+        
+                // emojify returns the corresponding emoji image
+                function emojify() {
+                    var out = `🎉`
+                    return out
+                }
+        
+                var app = new Vue({
+                    el: "#app",
+                    data: {
+                        message1: "Hello, World! " + emojify(),
+                        message2: "your name"
+                    }
+                })
+            </script>
+        
         </textarea>
     </div>
 
