@@ -41,7 +41,7 @@
             /* grid */
             display: grid;
             /* grid:4x3 */
-            grid-template-areas: ". . . ." ". . . ." ". . . ." "a a a a";
+            grid-template-areas: ". ." ". ." ". ." ". ." ". .";
             /* spacing */
             padding: 96px;
             grid-gap: 32px;
@@ -121,7 +121,7 @@
     <div id="app" :style="gradient(active)">
         <h1>Vue turorial examples</h1>
         <div id="grid">
-            <example v-for="example in examples" v-bind:key="example.name" @click.native="goTo(example)" :active="active" :example="example" :effect="gradient"></example>
+            <example v-for="example in examples" v-bind:key="example.name" @click.native="goTo(example)" :active="active" :example="example"></example>
         </div>
 
     </div>
@@ -131,24 +131,18 @@
 
         // emojify returns the corresponding emoji image
         Vue.component("example", {
-            props: ["active", "example", "effect"],
+            props: ["active", "example"],
             template: `
                 <div class="grid-item">
+                <a hre
                     <div class="grid-cell--top" >
-                        <span  v-html="example.name" ></span>
+                        <img :src="example.screenshot" >
                     </div>
                 <div class="grid-cell--bottom" >
                     {{ example.name.toUpperCase() }}
                 </div>
             </div>
 	        `,
-            methods: {
-                corrected_color: function() {
-                    return {
-                        color: this.swatch.color == '#ffffff' ? '#000000' : this.swatch.color
-                    }
-                }
-            }
         })
 
         var app = new Vue({
