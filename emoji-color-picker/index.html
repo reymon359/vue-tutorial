@@ -122,7 +122,6 @@
         <h1>Emoji Color Picker</h1>
 
         <div id="grid">
-
             <swatch v-for="swatch in swatches" @click.native="activate(swatch)" :active="active" :swatch="swatch" :effect="gradient"></swatch>
         </div>
 
@@ -140,18 +139,18 @@
         Vue.component("swatch", {
             props: ["active", "swatch", "effect"],
             template: `
-            <div class="grid-item">
-                <div class="grid-cell--top" :style="effect(swatch)" >
-                    <span
-                        v-html="swatch.emoji"
-                        :class="{ bounce: swatch == active }"
-                    ></span>
-                </div>
+                <div class="grid-item">
+                    <div class="grid-cell--top" :style="effect(swatch)" >
+                        <span
+                            v-html="swatch.emoji"
+                            :class="{ bounce: swatch == active }"
+                        ></span>
+                    </div>
                 <div class="grid-cell--bottom" :style="corrected_color()">
                     {{ swatch.color.toUpperCase() }}
                 </div>
             </div>
-	`,
+	        `,
             methods: {
                 corrected_color: function() {
                     return {
