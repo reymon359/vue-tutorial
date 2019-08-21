@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
-    <link rel="stylesheet" href="/assets/css/debug.css">
+    <link rel="stylesheet" href="../assets/css/debug.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <style>
@@ -46,6 +46,7 @@
             height: 3.5rem;
             /* center offset */
             vertical-align: calc(-0.12109375em);
+            cursor: pointer;
         }
         
         .grid-item {
@@ -119,7 +120,7 @@
 
         // emojify returns the corresponding emoji image
         function emojify(name) {
-            var out = `<img src="emojis/` + name + `.png">`
+            var out = `<img src="../assets/emojis/` + name + `.png">`
             return out
         }
 
