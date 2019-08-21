@@ -30,11 +30,12 @@
         #app {
             /* fullscreen */
             width: 100vw;
-            height: 100vh;
+            height: 100%;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 4rem;
             text-align: center;
             padding-top: 30px;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.09) 0%, rgba(18, 18, 18, 0.09) 67%, rgba(202, 202, 202, 0.09) 67%, rgba(202, 202, 202, 0.09) 100%), linear-gradient(135deg, rgba(207, 207, 207, 0.17) 0%, rgba(207, 207, 207, 0.17) 30%, rgba(164, 164, 164, 0.17) 30%, rgba(164, 164, 164, 0.17) 100%), linear-gradient(45deg, rgb(54, 31, 124) 0%, rgb(54, 31, 124) 12.5%, rgb(55, 59, 128) 12.5%, rgb(55, 59, 128) 25%, rgb(56, 88, 132) 25%, rgb(56, 88, 132) 37.5%, rgb(57, 116, 136) 37.5%, rgb(57, 116, 136) 50%, rgb(57, 145, 141) 50%, rgb(57, 145, 141) 62.5%, rgb(58, 173, 145) 62.5%, rgb(58, 173, 145) 75%, rgb(59, 202, 149) 75%, rgb(59, 202, 149) 87.5%, rgb(60, 230, 153) 87.5%, rgb(60, 230, 153) 100%);
         }
         
         #grid {
@@ -89,15 +90,27 @@
         
         .grid-cell--top {
             border-radius: 4px 4px 0 0;
+            min-height: 300px;
+            background-size: cover;
+        }
+        
+        a {
+            text-decoration: none;
         }
         
         .grid-cell--bottom {
             font-weight: 900;
             font-size: 1.75rem;
+            padding: 10px;
         }
         
         .bounce {
             animation: bounce 1s;
+        }
+        
+        h1 {
+            color: white;
+            padding-top: 30px;
         }
         
         @keyframes bounce {
@@ -136,8 +149,7 @@
             template: `
             <div class="grid-item">
                 <a :href="example.link">
-                    <div class="grid-cell--top" >
-                            <img :src="example.screenshot" >
+                    <div  v-bind:style="{ 'background-image': 'url(' + example.screenshot + ')' }""  class="grid-cell--top" >
                     </div>
                     <div class="grid-cell--bottom" >
                         {{ example.name.toUpperCase() }}
@@ -156,31 +168,31 @@
                 examples: [{
                     name: "Hello, Vue! 🎉",
                     link: "./hello-vue",
-                    screenshot: "./screenshots/hello-vue"
+                    screenshot: "./assets/screenshots/hello-vue.png"
                 }, {
                     name: "Methods 💪",
                     link: "./vue-methods",
-                    screenshot: "./screenshots/vue-methods"
+                    screenshot: "./assets/screenshots/vue-methods.png"
                 }, {
                     name: "Control-Flow 🌀",
                     link: "./vue-control-flow",
-                    screenshot: "./screenshots/vue-control-flow"
+                    screenshot: "./assets/screenshots/vue-control-flow.png"
                 }, {
                     name: "Components 🛠",
                     link: "./vue-components",
-                    screenshot: "./screenshots/vue-components"
+                    screenshot: "./assets/screenshots/vue-components.png"
                 }, {
                     name: "Animagus🧙‍♂️",
                     link: "./animagus",
-                    screenshot: "./screenshots/animagus"
+                    screenshot: "./assets/screenshots/animagus.png"
                 }, {
                     name: "Schrödinger's Div 📦",
                     link: "./schrödinger's-div",
-                    screenshot: "./screenshots/schrödinger's-div"
+                    screenshot: "./assets/screenshots/schrödinger's-div.png"
                 }, {
                     name: "Emoji Color Picker 🎨",
                     link: "./emoji-color-picker",
-                    screenshot: "./screenshots/emoji-color-picker"
+                    screenshot: "./assets/screenshots/emoji-color-picker.png"
                 }],
             },
             methods: {
