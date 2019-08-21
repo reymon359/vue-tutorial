@@ -77,6 +77,20 @@
             cursor: pointer;
         }
         
+        p {
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        a {
+            color: #1e661b;
+            text-decoration: none;
+        }
+        
+        .grid-item-a {
+            text-decoration: none;
+        }
+        
         .grid-item:hover {
             /* transition */
             transition: transform 500ms;
@@ -97,10 +111,6 @@
             border-radius: 4px 4px 0 0;
             min-height: 300px;
             background-size: cover;
-        }
-        
-        a {
-            text-decoration: none;
         }
         
         .grid-cell--bottom {
@@ -139,6 +149,8 @@
 
     <div id="app" :style="gradient(active)">
         <h1>Vue turorial examples</h1>
+        <p>A set of vue code examples from the <a href="https://scrimba.com/g/glearnvue" target="_blank">Scrimba Tutorial</a>
+            <br><a href="https://github.com/reymon359/vue-tutorial" target="_blank">Here</a> is the repo with all the code</p>
         <div id="grid">
             <example v-for="example in examples" v-bind:key="example.name" @click.native="goTo(example)" :active="active" :example="example"></example>
         </div>
