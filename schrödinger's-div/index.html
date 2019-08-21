@@ -74,10 +74,35 @@
             color: var(--red);
             background: linear-gradient(0, rgba(74, 74, 74, 0.56) 0%, rgba(74, 74, 74, 0.56) 25%, rgba(52, 52, 52, 0.56) 25%, rgba(52, 52, 52, 0.56) 50%, rgba(30, 30, 30, 0.56) 50%, rgba(30, 30, 30, 0.56) 75%, rgba(8, 8, 8, 0.56) 75%, rgba(8, 8, 8, 0.56) 100%), linear-gradient(90deg, rgb(121, 121, 121) 0%, rgb(121, 121, 121) 16.667%, rgb(105, 105, 105) 16.667%, rgb(105, 105, 105) 33.334%, rgb(90, 90, 90) 33.334%, rgb(90, 90, 90) 50.001000000000005%, rgb(74, 74, 74) 50.001%, rgb(74, 74, 74) 66.668%, rgb(59, 59, 59) 66.668%, rgb(59, 59, 59) 83.33500000000001%, rgb(43, 43, 43) 83.335%, rgb(43, 43, 43) 100.002%);
         }
+        
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            padding: 15px;
+            font-size: 1.5rem;
+            background-color: #337335;
+            border: none;
+            border-radius: 10px;
+            box-shadow: -1px -1px 14px 9px #52af56;
+            font-weight: 400;
+            font-style: none;
+            text-decoration: none;
+            transition: all .5s;
+            color: white;
+        }
+        
+        .back-button:hover {
+            padding: 10px;
+            top: 35px;
+            left: 35px;
+            background-color: #2da731;
+        }
     </style>
 </head>
 
 <body>
+    <a class="back-button" href="../index.html">back</a>
 
     <div class="app" :class="theme()">
         <p>

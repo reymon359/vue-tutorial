@@ -68,6 +68,7 @@
             box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 60px;
             /* transform */
             transition: transform 500ms;
+            cursor: pointer;
         }
         
         .grid-item:hover {
@@ -123,7 +124,7 @@
         <div id="grid">
             <example v-for="example in examples" v-bind:key="example.name" @click.native="goTo(example)" :active="active" :example="example"></example>
         </div>
-
+        <a href=""></a>
     </div>
 
     <script>
@@ -133,16 +134,19 @@
         Vue.component("example", {
             props: ["active", "example"],
             template: `
-                <div class="grid-item">
-                <a hre
+            <div class="grid-item">
+                <a :href="example.link">
                     <div class="grid-cell--top" >
-                        <img :src="example.screenshot" >
+                            <img :src="example.screenshot" >
                     </div>
-                <div class="grid-cell--bottom" >
-                    {{ example.name.toUpperCase() }}
-                </div>
+                    <div class="grid-cell--bottom" >
+                        {{ example.name.toUpperCase() }}
+                        
+                    </div>
+                </a>
             </div>
 	        `,
+
         })
 
         var app = new Vue({
