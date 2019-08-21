@@ -28,16 +28,23 @@
         }
         
         #app {
-            /* grid */
-            display: grid;
-            /* grid:4x3 */
-            grid-template-areas: ". . . ." ". . . ." ". . . .";
-            /* spacing */
-            padding: 96px;
-            grid-gap: 32px;
             /* fullscreen */
             width: 100vw;
             height: 100vh;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 4rem;
+            text-align: center;
+            padding-top: 30px;
+        }
+        
+        #grid {
+            /* grid */
+            display: grid;
+            /* grid:4x3 */
+            grid-template-areas: ". . . ." ". . . ." ". . . ." "a a a a";
+            /* spacing */
+            padding: 96px;
+            grid-gap: 32px;
         }
         
         img {
@@ -112,7 +119,13 @@
 <body>
 
     <div id="app" :style="gradient(active)">
-        <swatch v-for="swatch in swatches" @click.native="activate(swatch)" :active="active" :swatch="swatch" :effect="gradient"></swatch>
+        <h1>Emoji Color Picker</h1>
+
+        <div id="grid">
+
+            <swatch v-for="swatch in swatches" @click.native="activate(swatch)" :active="active" :swatch="swatch" :effect="gradient"></swatch>
+        </div>
+
     </div>
 
     <script>
@@ -127,17 +140,17 @@
         Vue.component("swatch", {
             props: ["active", "swatch", "effect"],
             template: `
-		<div class="grid-item">
-			<div class="grid-cell--top" :style="effect(swatch)" >
-				<span
-					v-html="swatch.emoji"
-					:class="{ bounce: swatch == active }"
-				></span>
-			</div>
-			<div class="grid-cell--bottom" :style="corrected_color()">
-				{{ swatch.color.toUpperCase() }}
-			</div>
-		</div>
+            <div class="grid-item">
+                <div class="grid-cell--top" :style="effect(swatch)" >
+                    <span
+                        v-html="swatch.emoji"
+                        :class="{ bounce: swatch == active }"
+                    ></span>
+                </div>
+                <div class="grid-cell--bottom" :style="corrected_color()">
+                    {{ swatch.color.toUpperCase() }}
+                </div>
+            </div>
 	`,
             methods: {
                 corrected_color: function() {
